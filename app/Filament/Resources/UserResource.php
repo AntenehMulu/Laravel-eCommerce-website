@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\UserResource\RelationManagers\OrdersRelationManager;
 use Filament\Forms;
 use App\Models\User;
 use Filament\Tables;
@@ -24,6 +25,8 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?int $navigationSort = 1;
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -85,8 +88,13 @@ class UserResource extends Resource
     {
         return [
             //
+            OrdersRelationManager::class
         ];
     }
+    public static function getGloballySearchableAttributes(): array
+{
+    return ['name', 'email'];
+}
 
     public static function getPages(): array
     {

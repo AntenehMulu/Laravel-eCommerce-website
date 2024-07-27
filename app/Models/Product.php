@@ -17,7 +17,7 @@ class Product extends Model
         'description',
         'price',
         'is_active',
-        'is_feautured',
+        'is_featured',
         'in_stock',
         'on_sale',
     ];
@@ -32,6 +32,6 @@ class Product extends Model
     }
     public function orderItems(){
         return $this->hasMany(OrderItem::class);
-        
+
     }
 }

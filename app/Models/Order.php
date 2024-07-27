@@ -12,14 +12,14 @@ class Order extends Model
         'user_id',
         'grand_total',
         'payment_method',
-        'payment_Status',
+        'payment_status',
         'status',
         'currency',
         'shipping_amount',
         'shipping_method',
         'notes'
     ];
-    public function users(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
     public function items(){
