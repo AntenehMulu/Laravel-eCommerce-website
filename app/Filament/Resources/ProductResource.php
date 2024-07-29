@@ -93,7 +93,7 @@ class ProductResource extends Resource
                             Toggle::make('is_active')
                                 ->required()
                                 ->default(true),
-                            Toggle::make('in_featured')
+                            Toggle::make('is_featured')
                                 ->required()
                                 ->default(false),
                             Toggle::make('on_sale')
